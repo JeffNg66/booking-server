@@ -31,10 +31,13 @@ require('./routes/user.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT} at ${new Date()}.`);
+});
 
-(async () => {
+// (async () => {
 
-  await db.sequelize.sync();
+//   await db.sequelize.sync();
 
 // force: true will drop the table if it already exists
   // await db.sequelize.sync({force: true}).then(() => {
@@ -42,11 +45,11 @@ const PORT = process.env.PORT || 3000;
   //   initial();
   // });
 
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT} at ${new Date()}.`);
-  });
+//   app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT} at ${new Date()}.`);
+//   });
   
-})();
+// })();
 
 function initial() {
   Role.create({
