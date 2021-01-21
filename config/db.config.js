@@ -1,6 +1,6 @@
 module.exports = {
-  HOST: "localhost",
-  PORT: "5050",
+  HOST: "mysql",
+  // PORT: "5050",
   USER: "mini",
   PASSWORD: "mini@123",
   DB: "minidb",
