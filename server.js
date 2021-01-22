@@ -14,16 +14,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // deploy client front
-// app.use(express.static(__dirname + '/dist/client'))
+app.use(express.static(__dirname + '/dist/client'))
 
 // database
 const db = require("./models");
 const Role = db.role;
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my application." });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to my application." });
+// });
 
 // routes
 require('./routes/auth.routes')(app);
