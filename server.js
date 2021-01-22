@@ -13,21 +13,21 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// deploy client front
-app.use(express.static(__dirname + '/dist/client'))
-
 // database
 const db = require("./models");
 const Role = db.role;
 
 // simple route
 // app.get("/", (req, res) => {
-//   res.json({ message: "Welcome to my application." });
-// });
-
-// routes
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+  //   res.json({ message: "Welcome to my application." });
+  // });
+  
+  // routes
+  require('./routes/auth.routes')(app);
+  require('./routes/user.routes')(app);
+  
+  // deploy client front
+  app.use(express.static(__dirname + '/dist/client'))
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
