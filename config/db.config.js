@@ -1,9 +1,9 @@
 module.exports = {
-  HOST: "mysql",
+  HOST: process.env.HOST,
   // PORT: "5050",
-  USER: "mini",
-  PASSWORD: "mini@123",
-  DB: "minidb",
+  USER: process.env.USER,
+  PASSWORD: process.env.PASSWORD,
+  DB: process.env.DB,
   dialect: "mysql",
   pool: {
     max: 5,
