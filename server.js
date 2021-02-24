@@ -37,13 +37,13 @@ const PORT = process.env.PORT || 3000;
 
 (async () => {
 
-  // await db.sequelize.sync();
+  await db.sequelize.sync();
 
 // force: true will drop the table if it already exists
-  await db.sequelize.sync({force: true}).then(() => {
-    console.log('Drop and Resync Database with { force: true }');
-    initial();
-  });
+  // await db.sequelize.sync({force: true}).then(() => {
+  //   console.log('Drop and Resync Database with { force: true }');
+  //   initial();
+  // });
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT} at ${new Date()}.`);
